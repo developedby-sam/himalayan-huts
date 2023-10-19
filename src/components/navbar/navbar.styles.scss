@@ -1,0 +1,57 @@
+.navbar {
+  background-color: #fff;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  -webkit-box-shadow: 0 4 4 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 4 4 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  font-size: 16px;
+  padding: 1.5rem 5.5rem;
+
+  &__logo {
+    display: flex;
+
+    &-img {
+      padding-right: 1.5rem;
+    }
+
+    &-text {
+      width: fit-content;
+      font-size: 24px;
+    }
+  }
+
+  &__links {
+    width: 50%;
+    display: flex;
+    justify-content: start;
+
+    &-link {
+      padding: 10px 20px;
+    }
+  }
+
+  &__accounts {
+    width: 25%;
+    display: flex;
+    justify-content: end;
+
+    &-link {
+      padding: 10px 20px;
+
+      &-advertise {
+        color: #f1f5f9 !important;
+        background-color: #dc2626;
+        border-radius: 0.5rem;
+
+        &:hover {
+          background-color: #ef4444;
+        }
+      }
+    }
+  }
+}
