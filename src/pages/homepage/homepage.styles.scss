@@ -1,1 +1,43 @@
+.homepage {
+  height: fit-content;
+  &__hero {
+    height: 50vh;
+    background-image: url("../../assets/hero-img.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f1f5f9;
+
+    &-content {
+      text-align: center;
+
+      &--headline {
+        font-size: 5rem;
+        font-weight: 400;
+      }
+
+      &--search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+
+        input {
+          font-size: 1.8rem;
+          width: 70%;
+          height: 100%;
+          padding: 1rem 0.75rem;
+        }
+
+        img {
+          margin-left: -3rem;
+        }
+      }
+    }
+  }
+}
