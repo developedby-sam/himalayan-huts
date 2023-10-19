@@ -40,4 +40,52 @@
       }
     }
   }
+
+  // Featured Rental Section
+  &__featured-rentals {
+    padding: 2rem 5.5rem;
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 400;
+      padding: 3rem 0;
+    }
+
+    .directory {
+      .card {
+        width: 40rem;
+        height: 45rem;
+        padding: 2rem;
+        color: #0f172a;
+        -webkit-box-shadow: 0 4 4 rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 0 4 4 rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+        &-image {
+          height: 50%;
+          background-image: url("../../assets/card-img.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        &-description {
+          .price {
+            font-size: 2.5rem;
+            font-weight: 600;
+          }
+
+          .description {
+            font-size: 2.2rem;
+          }
+
+          .place,
+          .listing-date {
+            font-size: 1.6rem;
+            margin: 1rem 0;
+          }
+        }
+      }
+    }
+  }
 }
