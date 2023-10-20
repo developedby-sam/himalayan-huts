@@ -1,0 +1,34 @@
+.advertising__progress{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-step{
+        display: flex;
+        margin: 2rem;
+        align-items: center;
+        justify-content: center;
+        width: 4rem; /* Adjust the width and height to your desired size */
+        height: 4rem;
+        border-radius: 50%; /* This makes it circular */
+        background-color: black; /* Background color for the circle */
+        opacity: 30%;
+        color: #fff; /* Text color for the icon */
+        font-size: 2rem; /* Adjust the font size as needed */
+        
+    }
+    .red{
+        background-color: #E02828;
+        opacity: 100%;
+    }
+}
+
+// .circle-component {
+
+//   }
+  
+//   .circle-component i {
+//     display: block;
+//     text-align: center;
+//   }
