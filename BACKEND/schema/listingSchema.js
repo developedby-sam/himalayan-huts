@@ -29,27 +29,27 @@ const ListingSchema = new mongoose.Schema(
       default: "",
     },
     price: {
-        type: Int16Array,
+        type: Number,
         required: true,
       },
     noOfRooms: {
-        type: Int16Array,
+        type: Number,
         required: true,
       },
       noOfRooms: {
-        type: Int16Array,
+        type: Number,
         required: true,
       },
       noOfBedRooms: {
-        type: Int16Array,
+        type: Number,
         required: true,
       },
       noOfLivingRooms: {
-        type: Int16Array,
+        type: Number,
         required: true,
       },
       floorArea: {
-        type: Int16Array,
+        type: Number,
         required: true,
         min: 6,
       },
@@ -66,26 +66,26 @@ const ListingSchema = new mongoose.Schema(
         required: true,
       },
       address2: {
-        type: Int16Array,
+        type: Number,
         required: true,
       },
       city: {
-        type: Int16Array,
+        type: Number,
         required: true,
       },
       state: {
-        type: Int16Array,
+        type: Number,
         required: true,
       },
       zipCode: {
-        type: Int16Array,
+        type: Number,
         required: true,
       },
       latitude:{
-        type:Float64Array
+        type:mongoose.Types.Decimal128
       },
       longitude:{
-        type:Float64Array
+        type:mongoose.Types.Decimal128
       },
       listingCoverPhoto:{
         type:String,
@@ -100,7 +100,7 @@ const ListingSchema = new mongoose.Schema(
         validate: [(val) => Array.isArray(val) && val.length > 0]
       },
       reviews: [{
-        type: Schema.Types.ObjectId,
+        type: [String],
         ref: 'Review'
       }],
       averageRating: {
