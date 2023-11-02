@@ -1,10 +1,19 @@
 import "./inputBar.styles.scss";
 
-const InputBar = ({ type, name, value, placeholder }) => {
+const InputBar = (props) => {
 	return (
-		<div className='inputBar'>
-			{/* <p className='inputBar__title'>{name}</p> */}
-			<input type={type} name={name} value={value} placeholder={placeholder} />
+		<div className='input-group'>
+			<label htmlFor={props.id}>
+				{props.label} {props.required && <span>*</span>}
+			</label>
+			<input
+				id={props.id}
+				type={props.type || "text"}
+				value={props.value}
+				onChange={props.onChange}
+				required={props.required}
+				placeholder={props.placeholder}
+			/>
 		</div>
 	);
 };

@@ -13,7 +13,8 @@ const Advertising = () => {
 		<section className='advertising'>
 			<form action='submit' className='advertising__form'>
 				<AdvertisingProgress progress={progress} />
-				<InputBar type={"text"} name={"name"} value={null} placeholder={"name"} />
+				<InputBar type='text' name='name' value={null} placeholder='name' />
+				<InputBar type='text' name='age' value={null} placeholder='age' />
 			</form>
 		</section>
 	);
