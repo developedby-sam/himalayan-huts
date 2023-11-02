@@ -1,0 +1,57 @@
+.auth__signup, .auth__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth__google-btn {
+    background-color: #4285F4;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.auth__divider {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    position: relative;
+    margin: 10px 0;
+}
+
+.auth__divider span {
+    position: absolute;
+    background: #fff;
+    padding: 0 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.auth__input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.auth__checkbox {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.auth__submit-btn {
+    background-color: #0066FF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+}
