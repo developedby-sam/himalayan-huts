@@ -1,6 +1,5 @@
 .inputBar {
-  display: flex;
-  align-items: center;
+  align-items: top;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 1rem;
@@ -10,14 +9,20 @@
 }
 
 .inputBar input {
-  flex: 1;
-  border: none;
-  outline: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
   font-size: 16px;
-  margin-top: 10px;
+  color: grey;
+  outline: none;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
 }
 
 .inputBar::placeholder {
   font-size: 16px;
   color: #ccc;
-}
+} 
