@@ -4,7 +4,7 @@ import "./loginsignup.styles.scss";
 const Signup = () => {
 	return (
 		<div className='auth__signup'>
-			<h2>Sign Up</h2>
+			<h2 className='auth__header'>Sign Up</h2>
 
 			<button className='auth__google-btn'>Connect with Google</button>
 
