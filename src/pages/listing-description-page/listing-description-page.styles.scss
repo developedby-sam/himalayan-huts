@@ -1,0 +1,184 @@
+.propertyListingPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  padding: 5rem 5.5rem;
+
+  &__propertyInfo {
+    width: 70%;
+
+    .property-listing {
+      margin-right: 5rem;
+
+      .listing-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+
+        .listing-title {
+          h1 {
+            font-size: 2em;
+            margin: 0;
+          }
+
+          .listing-location {
+            color: #666;
+            font-size: 1em;
+          }
+        }
+
+        .listing-price {
+          color: #e74c3c;
+          font-size: 1.5em;
+          font-weight: bold;
+        }
+      }
+
+      .image-gallery {
+        background-color: rgb(110, 194, 194);
+        height: 45rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .agent-info {
+        background: #f7f7f7;
+        padding: 20px;
+        margin-top: 20px;
+
+        .agent-card {
+          display: flex;
+          align-items: center;
+
+          .agent-image {
+            border-radius: 50%;
+            // set width and height
+          }
+
+          .agent-details {
+            margin-left: 20px;
+
+            .agent-name {
+              font-weight: bold;
+            }
+
+            .agent-title {
+              color: #999;
+            }
+
+            .agent-contact,
+            .agent-message {
+              margin-top: 10px;
+              display: inline-block;
+              // button styles
+            }
+          }
+        }
+      }
+
+      .listing-details {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+        .general-info {
+          background: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+
+          h2 {
+            margin-top: 0;
+          }
+
+          .info-table {
+            width: 100%;
+            border-collapse: collapse;
+
+            .info-key {
+              font-weight: bold;
+              padding: 8px;
+              background-color: #f2f2f2;
+            }
+            .info-value {
+              padding: 8px;
+            }
+
+            tr {
+              border-bottom: 1px solid #eaeaea;
+            }
+
+            tr:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+
+        .explanation {
+          background: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+
+          h2 {
+            margin-top: 0;
+          }
+
+          p {
+            margin-top: 0;
+            color: #666;
+          }
+        }
+      }
+
+      .listing-features {
+        margin-top: 20px;
+        .features-inner {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+
+          .interior-features,
+          .exterior-features {
+            width: 50%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            h2 {
+              margin-top: 0;
+            }
+
+            .features-list {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+
+              .feature-item {
+                padding: 5px 0;
+                display: flex;
+                align-items: center;
+
+                .feature-checkmark {
+                  color: green;
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__userInfo {
+    width: 30%;
+  }
+}

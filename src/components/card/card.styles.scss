@@ -1,17 +1,26 @@
 .card {
   flex: 1;
-  width: 40rem;
-  height: 45rem;
+  width: 42rem;
+  height: 40rem;
   padding: 2rem;
   color: #0f172a;
-  margin: 2rem;
+  margin: 1rem;
   -webkit-box-shadow: 0 4 4 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 4 4 rgba(0, 0, 0, 0.25);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
+  &:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0 4 4 rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0 4 4 rgba(0, 0, 0, 0.45);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.45);
+
+    transition: box-shadow 0.3s;
+  }
+
   &-image {
     height: 50%;
-    background-image: url("../../assets/card-img.png");
+    // background-image: url("../../assets/card-img.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
