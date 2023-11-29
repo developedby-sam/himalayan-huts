@@ -46,35 +46,61 @@
       }
 
       .agent-info {
-        background: #f7f7f7;
-        padding: 20px;
+        display: flex;
+        justify-content: center;
         margin-top: 20px;
+        padding: 20px;
+        background: #f7f7f7;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         .agent-card {
           display: flex;
           align-items: center;
+          background: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
           .agent-image {
+            width: 80px; // or your preferred size
+            height: 80px;
             border-radius: 50%;
-            // set width and height
+            margin-right: 20px;
+            object-fit: cover;
           }
 
           .agent-details {
-            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
 
             .agent-name {
+              font-size: 1.2em;
               font-weight: bold;
+              margin-bottom: 5px;
             }
 
             .agent-title {
-              color: #999;
+              font-size: 0.9em;
+              color: #666;
+              margin-bottom: 10px;
             }
 
-            .agent-contact,
-            .agent-message {
-              margin-top: 10px;
-              display: inline-block;
-              // button styles
+            .agent-contact-info {
+              button {
+                background: #e74c3c;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                margin-right: 10px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.9em;
+
+                &:hover {
+                  background: darken(#e74c3c, 10%);
+                }
+              }
             }
           }
         }

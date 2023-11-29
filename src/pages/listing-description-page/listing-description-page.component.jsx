@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 // Styles
 import "./listing-description-page.styles.scss";
 import cardImage from "../../assets/daily-rental.png";
+import personImg from "../../assets/person.png";
 
 const ListingDescriptionPage = (imgUrl) => {
   const location = useLocation();
@@ -58,6 +59,14 @@ const ListingDescriptionPage = (imgUrl) => {
     Swap: "Not",
     Front: "Northwest",
     "Rental Income": "NRs. 15000",
+  };
+
+  const agent = {
+    name: "Michael James",
+    title: "Real Estate Specialist",
+    phone: "+123 456 7890",
+    email: "m.james@realestate.com",
+    imageUrl: personImg, // Replace with actual path
   };
 
   return (
@@ -135,12 +144,32 @@ const ListingDescriptionPage = (imgUrl) => {
       <section className="propertyListingPage__userInfo">
         <aside className="agent-info">
           <div className="agent-card">
-            <img src="agent-image-url" alt="Agent" className="agent-image" />
+            <img
+              src={agent.imageUrl}
+              alt={`${agent.name}`}
+              className="agent-image"
+            />
             <div className="agent-details">
-              <div className="agent-name">Michael James</div>
-              <div className="agent-title">Real Estate Specialist</div>
-              <button className="agent-contact">View Phone</button>
-              <button className="agent-message">Send Message</button>
+              <div className="agent-name">{agent.name}</div>
+              <div className="agent-title">{agent.title}</div>
+              <div className="agent-contact-info">
+                <button
+                  className="agent-phone"
+                  onClick={() => {
+                    /* Handle phone click */
+                  }}
+                >
+                  {agent.phone}
+                </button>
+                <button
+                  className="agent-email"
+                  onClick={() => {
+                    /* Handle email click */
+                  }}
+                >
+                  {agent.email}
+                </button>
+              </div>
             </div>
           </div>
         </aside>
