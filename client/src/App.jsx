@@ -10,6 +10,7 @@ import Footer from "./components/footer/footer.component";
 import Auth from "./pages/auth/auth.component";
 import DailyRental from "./pages/daily-rental/daily-rental.component";
 import ListingDescriptionPage from "./pages/listing-description-page/listing-description-page.component";
+import Profilepage from "./pages/profilepage/profilepage.component";
 
 const App = () => (
   <>
@@ -22,6 +23,7 @@ const App = () => (
       <Route path="/description" Component={ListingDescriptionPage} />
       <Route path="/advertise" Component={Advertising} />
       <Route path="/auth" Component={Auth} />
+      <Route path="/profile" Component={Profilepage} />
     </Routes>
     <Footer />
   </>
