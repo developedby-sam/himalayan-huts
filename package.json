@@ -1,0 +1,11 @@
+{
+  "name": "himalayan-huts",
+  "version": "1.0.0",
+  "description": "HimalayanHuts is a platform where people can easily search for rooms, flats, and housing rentals in different areas of Nepal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
