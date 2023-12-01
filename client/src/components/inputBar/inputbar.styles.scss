@@ -1,6 +1,7 @@
 .input-group {
   margin: 1rem 0;
   position: relative;
+  width: 50rem;
 }
 
 .input-group label {
@@ -13,12 +14,12 @@
 .input-group input {
   width: 100%;
   max-width: 500px; /* Limiting the width to 500px */
-  padding: 0.5rem;
+  padding: 1rem 2rem;
   box-sizing: border-box;
   border: 1px solid #ddd;
   border-radius: 0;
   outline: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .input-group input:focus {

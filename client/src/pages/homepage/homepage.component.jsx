@@ -5,6 +5,8 @@ import Listing from "../../components/listing/listing.component";
 import featuredSalesCardImg from "../../assets/card-img.png";
 import featuredRentalCardImg from "../../assets/featured-img.png";
 
+import rentalProperties from "../../data";
+
 const Homepage = () => (
   <div className="homepage">
     <section className="homepage__hero">
@@ -21,12 +23,12 @@ const Homepage = () => (
 
     <section className="homepage__featured-rentals">
       <h2 className="section-title">Featured Rentals</h2>
-      <Listing imgUrl={featuredRentalCardImg} />
+      <Listing properties={rentalProperties} />
     </section>
 
     <section className="homepage__featured-sales">
       <h2 className="section-title">Featured Sales</h2>
-      <Listing imgUrl={featuredSalesCardImg} />
+      <Listing properties={rentalProperties} />
     </section>
   </div>
 );

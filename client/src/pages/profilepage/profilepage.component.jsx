@@ -120,12 +120,12 @@ export default function Profilepage() {
       dispatch(signOutUserStart());
       const res = await fetch(`http://localhost:3000/api/auth/signout`);
       const data = await res.json();
+      console.log(data.success);
       if (data.success === false) {
         dispatch(deleteUserFailure(data.message));
         return;
       }
-      dispatch(deleteUserSuccess(data));
-      navigate("/");
+      dispatch(deleteUserSuccess());
     } catch (error) {
       dispatch(deleteUserFailure(data.message));
     }

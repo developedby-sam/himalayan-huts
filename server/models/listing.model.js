@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const listingSchema = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
     },
@@ -14,11 +14,7 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    regularPrice: {
-      type: Number,
-      required: true,
-    },
-    discountPrice: {
+    price: {
       type: Number,
       required: true,
     },
@@ -30,24 +26,20 @@ const listingSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    furnished: {
-      type: Boolean,
-      required: true,
-    },
-    parking: {
-      type: Boolean,
-      required: true,
-    },
-    type: {
+    warmingType: {
       type: String,
-      required: true,
-    },
-    offer: {
-      type: Boolean,
       required: true,
     },
     imageUrls: {
       type: Array,
+      required: true,
+    },
+    area: {
+      type: String,
+      required: true,
+    },
+    ageOfBuilding: {
+      type: Number,
       required: true,
     },
     userRef: {

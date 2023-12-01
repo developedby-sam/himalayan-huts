@@ -7,6 +7,11 @@ import logo from "../../assets/logo.png";
 const Navbar = () => {
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
+
+  const handleOnClick = (event) => {
+    event.preventDefault();
+    navigate("/profile");
+  };
   return (
     <div className="navbar">
       <Link className="navbar__logo" to="/">
@@ -38,7 +43,7 @@ const Navbar = () => {
         <Link to="/auth" className="navbar__accounts-link" href="#">
           {currentUser ? (
             <img
-              onClick={navigate("/profile")}
+              onClick={handleOnClick}
               id="avatar"
               src={currentUser.avatar}
               alt="profile"
