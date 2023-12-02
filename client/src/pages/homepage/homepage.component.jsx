@@ -53,7 +53,7 @@ const Homepage = () => {
       </section>
 
       <section className="homepage__featured-sales">
-        <h2 className="section-title">Featured Sales</h2>
+        <h2 className="section-title">Featured Sells</h2>
         <Listing properties={saleProperties} />
       </section>
     </div>
