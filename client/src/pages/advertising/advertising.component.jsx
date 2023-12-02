@@ -21,6 +21,7 @@ const Advertising = () => {
 		bedrooms: null,
 		bathrooms: null,
 		price: null,
+		type: "",
 		warmingType: "",
 		area: "",
 		ageOfBuilding: null,
@@ -35,7 +36,6 @@ const Advertising = () => {
 			setUploading(true);
 			setImageUploadError(false);
 			const promises = [];
-			console.log(files);
 			for (let i = 0; i < files.length; i++) {
 				promises.push(storeImage(files[i]));
 			}
@@ -46,6 +46,7 @@ const Advertising = () => {
 						...formData,
 						imageUrls: formData.imageUrls.concat(urls),
 					});
+					console.log(formData, urls, "DHAJKSHDAKJSC");
 					setImageUploadError(false);
 					setUploading(false);
 				})
@@ -53,35 +54,65 @@ const Advertising = () => {
 					setImageUploadError("Image upload failed (2 mb max per image)");
 					setUploading(false);
 				});
+			console.log(uploading);
 		} else {
 			setImageUploadError("You can only upload 6 images per listing");
 			setUploading(false);
 		}
 	};
 
-	const storeImage = async (file) => {
-		return new Promise((resolve, reject) => {
-			if (!file) {
-				console.error("No file selected for upload");
-				return;
-			}
-			// Create a storage reference
-			const storageReference = storageRef(storage, `images/${file.name}`);
-			console.log(storageReference);
-			// Upload file to Firebase Storage
-			uploadBytes(storageReference, file)
-				.then((snapshot) => {
-					console.log("Uploaded a blob or file!", snapshot);
+	// const storeImage = async (file) => {
+	// 	return new Promise((resolve, reject) => {
+	// 		if (!file) {
+	// 			console.error("No file selected for upload");
+	// 			return;
+	// 		}
+	// 		// Create a storage reference
+	// 		const storageReference = storageRef(storage, `images/${file.name}`);
+	// 		console.log(storageReference);
+	// 		// Upload file to Firebase Storage
+	// 		uploadBytes(storageReference, file)
+	// 			.then((snapshot) => {
+	// 				console.log("Uploaded a blob or file!", snapshot);
 
-					// Optionally, you can retrieve the URL of the uploaded file
-					getDownloadURL(snapshot.ref).then((downloadURL) => {
-						console.log("File available at", downloadURL);
-					});
-				})
-				.catch((error) => {
-					console.error("Error uploading file:", error);
-				});
-		});
+	// 				// Optionally, you can retrieve the URL of the uploaded file
+	// 				getDownloadURL(snapshot.ref).then((downloadURL) => {
+	// 					console.log("File available at", downloadURL);
+	// 				});
+	// 			})
+	// 			.catch((error) => {
+	// 				console.error("Error uploading file:", error);
+	// 			});
+	// 	});
+	// };
+
+	const storeImage = async (file) => {
+		// If no file is provided, reject the promise
+		if (!file) {
+			console.error("No file selected for upload");
+			return Promise.reject("No file selected for upload");
+		}
+
+		// Create a storage reference
+		const storageReference = storageRef(storage, `images/${file.name}`);
+		console.log(storageReference);
+
+		// Return a promise that resolves with the download URL
+		return uploadBytes(storageReference, file)
+			.then((snapshot) => {
+				console.log("Uploaded a blob or file!", snapshot);
+
+				// Get the download URL
+				return getDownloadURL(snapshot.ref);
+			})
+			.then((downloadURL) => {
+				console.log("File available at", downloadURL);
+				return downloadURL; // Resolve with the URL
+			})
+			.catch((error) => {
+				console.error("Error uploading file:", error);
+				throw error; // Reject the promise if there's an error
+			});
 	};
 
 	const handleRemoveImage = (index) => {
@@ -116,6 +147,12 @@ const Advertising = () => {
 				}),
 			});
 			const data = await res.json();
+			console.log(
+				JSON.stringify({
+					...formData,
+					userRef: currentUser._id,
+				})
+			);
 			setLoading(false);
 			if (data.success === false) {
 				setError(data.message);
@@ -160,6 +197,13 @@ const Advertising = () => {
 					id='warmingType'
 					value={formData.warmingType}
 					placeholder='Warming type'
+					onChange={handleChange}
+				/>
+				<InputBar
+					type='text'
+					id='type'
+					value={formData.type}
+					placeholder='Type: Rent/ Sell / Daily Rentals'
 					onChange={handleChange}
 				/>
 				<InputBar

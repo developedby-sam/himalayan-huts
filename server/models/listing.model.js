@@ -26,6 +26,10 @@ const listingSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    type: {
+      type: String,
+      required: true,
+    },
     warmingType: {
       type: String,
       required: true,
