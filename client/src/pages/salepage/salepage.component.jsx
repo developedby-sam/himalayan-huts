@@ -22,7 +22,7 @@ const Salepage = () => {
 			}
 		};
 
-		fetchData("sell").then((data) => {
+		fetchData("sale").then((data) => {
 			if (data) setSaleProperties(data);
 		});
 	}, []);
@@ -30,6 +30,7 @@ const Salepage = () => {
 	return (
 		<div className='salepage'>
 			<section className='homepage__featured-rentals'>
+				<h2 className='section-title'>Sells</h2>
 				<Listing properties={saleProperties} />
 			</section>
 		</div>

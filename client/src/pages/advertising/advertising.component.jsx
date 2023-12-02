@@ -203,7 +203,7 @@ const Advertising = () => {
 					type='text'
 					id='type'
 					value={formData.type}
-					placeholder='Type: Rent/ Sell / Daily Rentals'
+					placeholder='Type: rent/ sell / daily'
 					onChange={handleChange}
 				/>
 				<InputBar

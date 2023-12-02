@@ -29,7 +29,7 @@ const Rentpage = () => {
 	return (
 		<div className='rentpage'>
 			<section className='homepage__featured-rentals'>
-				<h2 className='section-title'>Featured Rentals</h2>
+				<h2 className='section-title'>Rentals</h2>
 				<Listing properties={rentalProperties} imageURL={featuredRentalCardImg} />
 			</section>
 		</div>
