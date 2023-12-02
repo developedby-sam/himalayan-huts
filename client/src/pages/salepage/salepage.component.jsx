@@ -5,35 +5,37 @@ import Listing from "../../components/listing/listing.component";
 // import rentalProperties from "../../data";
 
 const Salepage = () => {
-	const [saleProperties, setSaleProperties] = useState([]);
+  const [saleProperties, setSaleProperties] = useState([]);
 
-	useEffect(() => {
-		const fetchData = async (type) => {
-			const limit = 20; // Set limit to 20
-			try {
-				const response = await fetch(`http://localhost:3000/api/listing/get?type=${type}&limit=${limit}`);
-				console.log(response);
-				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
-				}
-				return await response.json();
-			} catch (error) {
-				console.error("Error fetching data: ", error);
-			}
-		};
+  useEffect(() => {
+    const fetchData = async (type) => {
+      const limit = 20; // Set limit to 20
+      try {
+        const response = await fetch(
+          `http://localhost:3000/api/listing/get?type=${type}&limit=${limit}`
+        );
+        console.log(response);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    };
 
-		fetchData("sell").then((data) => {
-			if (data) setSaleProperties(data);
-		});
-	}, []);
+    fetchData("sale").then((data) => {
+      if (data) setSaleProperties(data);
+    });
+  }, []);
 
-	return (
-		<div className='salepage'>
-			<section className='homepage__featured-rentals'>
-				<Listing properties={saleProperties} />
-			</section>
-		</div>
-	);
+  return (
+    <div className="salepage">
+      <section className="homepage__featured-rentals">
+        <Listing properties={saleProperties} />
+      </section>
+    </div>
+  );
 };
 
 export default Salepage;
